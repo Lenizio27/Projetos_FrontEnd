@@ -1,0 +1,135 @@
+body{
+    margin: 0;
+    background-color: rgb(42, 42, 145);
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#divBody{
+    background-color: rgb(227, 246, 248);
+    width: 1080px;
+    border-radius: 10px;
+    height: 100vh;
+    margin: auto;
+    
+}
+
+:root{
+    --cor1: rgb(218, 218, 218);
+    --cor2: #00a300;
+}
+
+/* Header */
+header{
+    & #divHeader{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1080px;
+        margin: auto;
+        padding: 0 10px;
+
+        & #headerNav{
+            display: none;
+        }
+        & #btNav{
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            padding: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            & .blockBtNav{
+                width: 100%;
+                height: 2px;
+                background-color: black;
+            }
+        }
+    }
+}
+
+/* Main */
+main{
+    & #divMain{
+        max-width: 1080px;
+        margin: auto;
+        padding: 5px 10px;
+
+        & #sectionAdd{
+            & #formAdd{
+                display: flex;
+                gap: 10px;
+                height: 35px;
+            }
+
+            & #inputTask{
+                flex-grow: 10;
+                border-radius: 5px;
+                border: 1px solid black;
+            }
+
+            & #btAdd{
+                background-color: var(--cor2);
+                border-radius: 5px;
+                border: 1px solid black;
+                transition: .6s;
+            }
+            
+            & #btAdd:hover{
+                filter: drop-shadow(0px 0px 5px rgb(183, 183, 183));
+            }
+        }
+        & #sectionTasks{
+            transition: 1s;
+            padding: 5px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+    /* Js Elements Create */
+    .taskDiv{
+        height: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        align-items: center;
+        background-color: lightblue;
+        padding:5px 2px;
+        border-radius: 5px;
+        transition: 0.4s;
+    }
+    .taskDiv:hover{
+        filter: drop-shadow(0 0 1px darkgray);
+    }
+    .btTaskAdd{
+        background-color: green;
+        right: 50px;
+    }
+    .btTaskRemove{
+        background-color: red;
+        right: 10px;
+    }
+    .bts{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        border-radius: 5px;
+        transition: .4s;
+    }
+    .bts:hover{
+        text-shadow: 0 0 10px rgb(255, 255, 255);
+    }
+}
