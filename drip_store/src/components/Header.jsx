@@ -1,5 +1,6 @@
 import { Logo, LogoMobile } from "./Logo";
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const [open, menuOpen] = useState(false)
@@ -25,12 +26,12 @@ const Header = () => {
                     </div>
                 </div>
                 {/* Navegação Pagina */}
-                <nav className="bg-c4 justify-start items-start w-full">
+                <nav className="justify-start items-start w-full">
                     <ul className="flex gap-6">
-                        <li>a</li>
-                        <li>b</li>
-                        <li>c</li>
-                        <li>d</li>
+                        <li><NavLink to={"/"}>Home</NavLink></li>
+                        <li><NavLink to={"/"}>Produtos</NavLink></li>
+                        <li><NavLink to={"/"}>Categorias</NavLink></li>
+                        <li><NavLink to={"/"}>Meus Pedidos</NavLink></li>
                     </ul>
                 </nav>
             </div>
