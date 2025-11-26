@@ -20,7 +20,9 @@ export default {
         s4: "var(--s4)",
         s5: "var(--s5)",
         s6: "var(--s6)",
-
+        s7: "var(--s7)",
+        
+        b1: "var(--b1)",
       },
     },
   },

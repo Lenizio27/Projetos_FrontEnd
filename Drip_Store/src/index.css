@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    font-family: inter;
+}
+
 :root{
     --c1: #EE4266;
     --c2: #C92071;
@@ -17,4 +21,6 @@
     --s5: #CCCCCC;
     --s6: #F5F5F5;
     --s7: #FFFFFF;
+
+    --b1: #47474779;
 }

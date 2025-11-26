@@ -1,22 +1,73 @@
-import Logo from "./Logo";
+import { Logo, LogoMobile } from "./Logo";
+import { useState } from 'react'
+
 const Header = () => {
+    const [open, menuOpen] = useState(false)
     return ( 
         <>
-        <header className="bg-c1">
-            <div className="flex flex-col items-center w-[1280px] m-auto">
-                <div className="flex items-center justify-around">
-                    <Logo/>
-                    <input type="text" />
-                    <div className="pi pi-shopping-cart"></div>
+        <header className="bg-s7">
+            <div className="flex flex-col items-center max-w-[1280px] m-auto px-4 max-md:hidden">
+                {/* Pesquisas */}
+                <div className="flex items-center justify-between w-full py-5">
+                    <Logo className="flex-6"/>
+                    <div className="w-[500px] flex-1 relative">
+                        <input placeholder="Pesquisar produto..." type="text" className=" pl-5 bg-s6  h-[60px] rounded-md w-full" />
+                        <i className="pi pi-search absolute right-4 top-5 text-[20px] text-s5"></i>
+                    </div>
+                    <div className="flex gap-6 items-center px-8">
+                        <a href="" className="underline text-s3">Cadastre-se</a>
+                        <button 
+                        className="flex items-center justify-center text-s7 h-[22px] bg-c2 px-7 py-5 rounded-md">Entrar</button>
+                    </div>
+                    <div className="relative px-1">
+                        <i className="pi pi-shopping-cart text-[25px]"></i>
+                        <div className="absolute top-0 right-0 w-[15px] h-[15px] bg-c1 rounded-lg text-center text-[10px] text-s7">1</div>
+                    </div>
                 </div>
-                <nav>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                {/* Navegação Pagina */}
+                <nav className="bg-c4 justify-start items-start w-full">
+                    <ul className="flex gap-6">
+                        <li>a</li>
+                        <li>b</li>
+                        <li>c</li>
+                        <li>d</li>
                     </ul>
                 </nav>
+            </div>
+            {/* Header Mobile */}
+            <div className="hidden max-md:flex items-center justify-between px-4 py-2 h-[70px]">
+                <div className={`transition-all duration-200 pi ${open ? `pi-align-left scale-x-90`: `pi-align-justify`} text-[20px]`} onClick={() => menuOpen(!open)}></div>
+                <LogoMobile/>
+                <div className="flex gap-5">
+                    <div className="pi pi-search text-[20px] cursor-pointer"></div>
+                    <div className="relative px-1">
+                        <i className="pi pi-shopping-cart text-[20px]"></i>
+                        <div className="absolute top-0 right-0 w-[15px] h-[15px] bg-c1 rounded-lg text-center text-[10px] text-s7">1</div>
+                    </div>
+                </div>
+            </div>
+            {/* Navegacao Mobile */}
+            <div className={`md:hidden h-[calc(100vh-70px)] w-full bg-b1 transition-all duration-100 ${open ? " opacity-100" : "scale-100 opacity-0"}`}>
+
+                <div className={`flex flex-col w-[80%] bg-s7 h-[calc(100vh-70px)] md:hidden transition-all duration-200 origin-left px-4 py-4 justify-between ${open ? "scale-100 opacity-100" : "scale-100 scale-x-0 opacity-0"} `}>
+                    <div>
+                        <h2>Paginas</h2>
+                        <ul>
+                            <li>Home</li>
+                            <li>Produtos</li>
+                            <li>Categorias</li>
+                            <li>Meus Pedidos</li>
+                        </ul>
+                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                        <hr />
+                        <button
+                        className="flex items-center justify-center text-s7 h-[22px] bg-c2 px-7 py-5 rounded-md w-full m-2">
+                                Entrar
+                        </button>
+                        <a href="" className="underline text-s3">Cadastre-se</a>
+                    </div>
+                </div>
             </div>
         </header>
         </>
