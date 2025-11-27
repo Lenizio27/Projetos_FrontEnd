@@ -4,13 +4,31 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const [open, menuOpen] = useState(false)
+    const arrayLinks = [
+        {
+            route: "/",
+            title: "Home"
+        },
+        {
+            route: "/s",
+            title: "Produtos"
+        },
+        {
+            route: "/s2",
+            title: "Categorias"
+        },
+        {
+            route: "/s3",
+            title: "Meus Pedidos"
+        },
+    ]
     return ( 
         <>
         <header className="bg-s7">
             <div className="flex flex-col items-center max-w-[1280px] m-auto px-4 max-md:hidden">
                 {/* Pesquisas */}
                 <div className="flex items-center justify-between w-full py-5">
-                    <Logo className="flex-6"/>
+                    <Logo className="flex-6" open={true}/>
                     <div className="w-[500px] flex-1 relative">
                         <input placeholder="Pesquisar produto..." type="text" className=" pl-5 bg-s6  h-[60px] rounded-md w-full" />
                         <i className="pi pi-search absolute right-4 top-5 text-[20px] text-s5"></i>
@@ -28,17 +46,21 @@ const Header = () => {
                 {/* Navegação Pagina */}
                 <nav className="justify-start items-start w-full">
                     <ul className="flex gap-6">
-                        <li><NavLink to={"/"}>Home</NavLink></li>
-                        <li><NavLink to={"/"}>Produtos</NavLink></li>
-                        <li><NavLink to={"/"}>Categorias</NavLink></li>
-                        <li><NavLink to={"/"}>Meus Pedidos</NavLink></li>
+                        {arrayLinks.map(item => (
+                            <li>
+                                <NavLink to={item.route} 
+                                className={({ isActive }) =>
+                                isActive ? "text-c2 underline" : "text-s3"}
+                                >{item.title}</NavLink>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             </div>
             {/* Header Mobile */}
             <div className="hidden max-md:flex items-center justify-between px-4 py-2 h-[70px]">
                 <div className={`transition-all duration-200 pi ${open ? `pi-align-left scale-x-90`: `pi-align-justify`} text-[20px]`} onClick={() => menuOpen(!open)}></div>
-                <LogoMobile/>
+                <LogoMobile open={true}/>
                 <div className="flex gap-5">
                     <div className="pi pi-search text-[20px] cursor-pointer"></div>
                     <div className="relative px-1">
@@ -48,16 +70,20 @@ const Header = () => {
                 </div>
             </div>
             {/* Navegacao Mobile */}
-            <div className={`md:hidden h-[calc(100vh-70px)] w-full bg-b1 transition-all duration-100 ${open ? " opacity-100" : "scale-100 opacity-0"}`}>
+            <div className={`md:hidden h-[calc(100vh-70px)] w-full bg-b1 transition-all duration-100 absolute ${open ? " opacity-100" : "scale-100 opacity-0"}`}>
 
                 <div className={`flex flex-col w-[80%] bg-s7 h-[calc(100vh-70px)] md:hidden transition-all duration-200 origin-left px-4 py-4 justify-between ${open ? "scale-100 opacity-100" : "scale-100 scale-x-0 opacity-0"} `}>
                     <div>
                         <h2>Paginas</h2>
                         <ul>
-                            <li>Home</li>
-                            <li>Produtos</li>
-                            <li>Categorias</li>
-                            <li>Meus Pedidos</li>
+                            {arrayLinks.map(item => (
+                            <li>
+                                <NavLink to={item.route} 
+                                className={`${({ isActive }) =>
+                                isActive ? "text-c2 underline" : "text-s3"} transition-all duration-75`}
+                                >{item.title}</NavLink>
+                            </li>
+                        ))}
                         </ul>
                     </div>
                     <div className="flex flex-col items-center justify-center">
