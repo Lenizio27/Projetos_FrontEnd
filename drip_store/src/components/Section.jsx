@@ -29,10 +29,21 @@ export const SectionHero = () => {
      );
 }
 
-export const Sections = ({}) => {
+export const Sections = ({title, titleAlign, link, children}) => {
+    const align = titleAlign === "center" ? "center" : "left";
     return (
         <>
-
+            <section>
+                <div className="max-w-[1440px] m-auto px-4">
+                    <div className={`text-${align} flex items-center justify-between`}>
+                        <h2 className="text-s2 text-[18px]">{title}</h2>
+                        <h2 className="text-c2 text-[18px]"><a href={link.href}>{link.text}</a></h2>
+                    </div>
+                    <div>
+                        {children}
+                    </div>
+                </div>
+            </section>
         </>
     )
 }
