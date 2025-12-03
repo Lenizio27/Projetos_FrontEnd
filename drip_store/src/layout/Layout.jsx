@@ -6,7 +6,9 @@ const Layout = () => {
     return ( 
         <>
             <Header />
-                <Outlet />
+                <main className="max-md:pt-[80px]">
+                    <Outlet />
+                </main>
             <Footer/>
         </>
      );

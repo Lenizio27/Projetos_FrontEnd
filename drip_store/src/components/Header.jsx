@@ -2,8 +2,23 @@ import { Logo, LogoMobile } from "./Logo";
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 
+
 const Header = () => {
     const [open, menuOpen] = useState(false)
+    const [classe, setClasse] = useState("");
+
+    function aplicarClasseDepois() {
+        if(open === false){
+            setTimeout(() => {
+                setClasse("z-[-100]");
+            }, 400)
+        }else if(open === true){
+            setTimeout(() => {
+                setClasse("flex");
+            }, 100)
+        }
+    }
+
     const arrayLinks = [
         {
             route: "/",
@@ -22,10 +37,11 @@ const Header = () => {
             title: "Meus Pedidos"
         },
     ]
+    
     return ( 
         <>
         <header className="bg-s7">
-            <div className="flex flex-col items-center max-w-[1280px] m-auto px-4 max-md:hidden">
+            <div className="flex flex-col items-center max-w-[1440px] m-auto px-4 max-md:hidden">
                 {/* Pesquisas */}
                 <div className="flex items-center justify-between w-full py-5">
                     <Logo className="flex-6" open={true}/>
@@ -58,8 +74,10 @@ const Header = () => {
                 </nav>
             </div>
             {/* Header Mobile */}
-            <div className="hidden max-md:flex items-center justify-between px-4 py-2 h-[70px]">
-                <div className={`transition-all duration-200 pi ${open ? `pi-align-left scale-x-90`: `pi-align-justify`} text-[20px]`} onClick={() => menuOpen(!open)}></div>
+            <div className="hidden max-md:flex items-center justify-between px-4 py-2 h-[80px] fixed bg-s7 w-full">
+                <div 
+                className={`cursor-pointer transition-all duration-100 pi ${open ? `pi-align-left scale-x-90`: `pi-align-justify ${aplicarClasseDepois()}`} text-[20px] ${aplicarClasseDepois()}`} 
+                onClick={() => menuOpen(!open)}></div>
                 <LogoMobile open={true}/>
                 <div className="flex gap-5">
                     <div className="pi pi-search text-[20px] cursor-pointer"></div>
@@ -69,18 +87,19 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+            
             {/* Navegacao Mobile */}
-            <div className={`md:hidden h-[calc(100vh-70px)] w-full bg-b1 transition-all duration-100 absolute ${open ? " opacity-100" : "scale-100 opacity-0"}`}>
+            <div className={`md:hidden h-[calc(100vh-80px)] w-full bg-b1 transition-all duration-200 bottom-0 fixed  ${open ? " opacity-100" : `scale-100 opacity-0 ${classe}`}`}>
 
-                <div className={`flex flex-col w-[80%] bg-s7 h-[calc(100vh-70px)] md:hidden transition-all duration-200 origin-left px-4 py-4 justify-between ${open ? "scale-100 opacity-100" : "scale-100 scale-x-0 opacity-0"} `}>
+                <div className={`flex flex-col w-[80%] bg-s7 h-[calc(100vh-80px)] md:hidden transition-all duration-200 origin-left px-4 py-4 justify-between ${open ? "scale-100 opacity-100" : "scale-100 scale-x-0 opacity-0"} `}>
                     <div>
                         <h2>Paginas</h2>
                         <ul>
                             {arrayLinks.map(item => (
                             <li>
                                 <NavLink to={item.route} 
-                                className={`${({ isActive }) =>
-                                isActive ? "text-c2 underline" : "text-s3"} transition-all duration-75`}
+                                className={({ isActive }) =>
+                                isActive ? "text-c2 underline" : "text-s3"}
                                 >{item.title}</NavLink>
                             </li>
                         ))}
