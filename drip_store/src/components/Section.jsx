@@ -3,7 +3,7 @@ export const SectionHero = () => {
         <>
             <section className=" bg-s6">
                 <div className="max-md:h-[calc(100vh-80px)] h-[calc(100vh-124px)] flex w-full max-md:flex-col max-w-[1440px] m-auto">
-                    <div className="flex-1 flex justify-center items-start p-2 flex-col gap-4 max-md:order-1 max-md:items-center max-md:text-center">
+                    <div className="flex-1 flex justify-center items-start p-4 flex-col gap-4 max-md:order-1 max-md:items-center max-md:text-center">
                         <h2 className="font-bold text-c6 max-md:text-c2">
                             Melhores ofertas personalizadas
                         </h2>
@@ -29,7 +29,7 @@ export const SectionHero = () => {
      );
 }
 
-export const Sections = ({title, titleAlign, link, children}) => {
+export const Sections = ({title, titleAlign, link, children, estilo}) => {
     const align = titleAlign === "center" ? "center" : "left";
     return (
         <>
@@ -39,7 +39,7 @@ export const Sections = ({title, titleAlign, link, children}) => {
                         <h2 className="text-s2 text-[18px]">{title}</h2>
                         <h2 className="text-c2 text-[18px]"><a href={link.href}>{link.text}</a></h2>
                     </div>
-                    <div>
+                    <div className={estilo}>
                         {children}
                     </div>
                 </div>

@@ -13,6 +13,7 @@ export default {
         c4: "var(--c4)",
         c5: "var(--c5)",
         c6: "var(--c6)",
+        c7: "var(--c7)",
 
         s1: "var(--s1)",
         s2: "var(--s2)",
