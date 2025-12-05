@@ -1,3 +1,5 @@
+import ImgTenisVermelho from "../assets/images/tenis_1.png"
+
 export const SectionHero = () => {
     return ( 
         <>
@@ -19,7 +21,7 @@ export const SectionHero = () => {
                         </button>
                     </div>
                     <div className="flex-1 bg-c2 flex justify-center items-center p-2 ">
-                        <img src="../src/assets/images/tenis_1.png" alt="" className="max-md:w-[300px]"/>
+                        <img src={ImgTenisVermelho} alt="" className="max-md:w-[300px]"/>
                     </div>
                 </div>
                 
