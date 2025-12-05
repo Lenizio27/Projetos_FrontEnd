@@ -20,7 +20,6 @@ export const SectionHero = () => {
                     </div>
                     <div className="flex-1 bg-c2 flex justify-center items-center p-2 ">
                         <img src="../src/assets/images/tenis_1.png" alt="" className="max-md:w-[300px]"/>
-                        <div className="w-4 h-2 bg-s5"></div>
                     </div>
                 </div>
                 
@@ -33,11 +32,13 @@ export const Sections = ({title, titleAlign, link, children, estilo}) => {
     const align = titleAlign === "center" ? "center" : "left";
     return (
         <>
-            <section>
+            <section className="bg-s8">
                 <div className="max-w-[1440px] m-auto px-4">
-                    <div className={`text-${align} flex items-center justify-between`}>
-                        <h2 className="text-s2 text-[18px]">{title}</h2>
-                        <h2 className="text-c2 text-[18px]"><a href={link.href}>{link.text}</a></h2>
+                    <div className={`flex items-center ${align === "center" ? "justify-center" : "justify-between"}`}>
+                        <h2 className="text-s2 text-[18px] my-3">{title}</h2>
+                        <h2 className={`${align === "center" ? `` : `text-c2 text-[18px]`}`}>
+                            <a href={link.href}>{link.text}</a>
+                        </h2>
                     </div>
                     <div className={estilo}>
                         {children}
