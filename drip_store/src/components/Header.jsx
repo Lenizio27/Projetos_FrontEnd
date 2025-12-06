@@ -89,9 +89,9 @@ const Header = () => {
             </div>
             
             {/* Navegacao Mobile */}
-            <div className={`md:hidden h-[calc(100vh-80px)] w-full bg-b1 transition-all duration-200 bottom-0 fixed  ${open ? " opacity-100" : `scale-100 opacity-0 ${classe}`} z-10`}>
+            <div className={`md:hidden h-[calc(100dvh-80px)] w-full bg-b1 transition-all duration-200 bottom-0 fixed  ${open ? " opacity-100" : `scale-100 opacity-0 ${classe}`} z-10`}>
 
-                <div className={`flex flex-col w-[80%] bg-s7 h-[calc(100vh-80px)] md:hidden transition-all duration-200 origin-left px-4 py-4 justify-between ${open ? "scale-100 opacity-100" : "scale-100 scale-x-0 opacity-0"}`}>
+                <div className={`flex flex-col w-[80%] bg-s7 h-[calc(100dvh-80px)] md:hidden transition-all duration-200 origin-left px-4 py-4 justify-between ${open ? "scale-100 opacity-100" : "scale-100 scale-x-0 opacity-0"}`}>
                     <div>
                         <h2>Paginas</h2>
                         <ul>
