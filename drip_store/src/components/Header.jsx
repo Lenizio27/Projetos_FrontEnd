@@ -1,6 +1,7 @@
 import { Logo, LogoMobile } from "./Logo";
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import { useEffect } from "react";
 
 
 const Header = () => {
