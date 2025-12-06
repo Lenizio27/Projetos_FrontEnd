@@ -74,7 +74,7 @@ const Header = () => {
                 </nav>
             </div>
             {/* Header Mobile */}
-            <div className="hidden max-md:flex items-center justify-between px-4 py-2 h-[80px] fixed bg-s7 w-full">
+            <div className="hidden max-md:flex items-center justify-between px-4 py-2 h-[80px] fixed bg-s7 w-full z-10">
                 <div 
                 className={`cursor-pointer transition-all duration-100 pi ${open ? `pi-align-left scale-x-90`: `pi-align-justify ${aplicarClasseDepois()}`} text-[20px] ${aplicarClasseDepois()}`} 
                 onClick={() => menuOpen(!open)}></div>
@@ -89,9 +89,9 @@ const Header = () => {
             </div>
             
             {/* Navegacao Mobile */}
-            <div className={`md:hidden h-[calc(100vh-80px)] w-full bg-b1 transition-all duration-200 bottom-0 fixed  ${open ? " opacity-100" : `scale-100 opacity-0 ${classe}`}`}>
+            <div className={`md:hidden h-[calc(100vh-80px)] w-full bg-b1 transition-all duration-200 bottom-0 fixed  ${open ? " opacity-100" : `scale-100 opacity-0 ${classe}`} z-10`}>
 
-                <div className={`flex flex-col w-[80%] bg-s7 h-[calc(100vh-80px)] md:hidden transition-all duration-200 origin-left px-4 py-4 justify-between ${open ? "scale-100 opacity-100" : "scale-100 scale-x-0 opacity-0"} `}>
+                <div className={`flex flex-col w-[80%] bg-s7 h-[calc(100vh-80px)] md:hidden transition-all duration-200 origin-left px-4 py-4 justify-between ${open ? "scale-100 opacity-100" : "scale-100 scale-x-0 opacity-0"}`}>
                     <div>
                         <h2>Paginas</h2>
                         <ul>

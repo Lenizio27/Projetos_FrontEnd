@@ -37,7 +37,7 @@ export const Sections = ({title, titleAlign, link, children, estilo}) => {
             <section className="bg-s8">
                 <div className="max-w-[1440px] m-auto px-4">
                     <div className={`flex items-center ${align === "center" ? "justify-center" : "justify-between"}`}>
-                        <h2 className="text-s2 text-[18px] my-3">{title}</h2>
+                        <h2 className="text-s2 text-[18px] my-3 font-bold">{title}</h2>
                         <h2 className={`${align === "center" ? `` : `text-c2 text-[18px]`}`}>
                             <a href={link.href}>{link.text}</a>
                         </h2>

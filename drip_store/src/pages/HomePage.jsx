@@ -1,7 +1,8 @@
 import { SectionHero, Sections } from "../components/Section";
-import { CardDestaque, CardDestaqueTipo } from "../components/ProductCard";
+import { CardDestaque, CardDestaqueTipo, CardProdutosEmAlta } from "../components/ProductCard";
 import ImgBlusa from "../assets/images/blusa_destaque.png";
 import ImgTenis from "../assets/images/tenis_3.png";
+import ImgTenis2 from "../assets/images/tenis_2.png";
 import ImgFone from "../assets/images/fone_destaque.png";
 
 import IconBlusa from "../assets/images/icon_blusa.png"
@@ -29,22 +30,25 @@ const HomePage = () => {
     ]
 
     const arrayCardsTipo = [
-        {
-            image: IconBlusa,
-        },
-        {
-            image: IconBlusa,
-        },
-        {
-            image: IconCalca,
-        },
-        {
-            image: IconFone,
-        },
-        {
-            image: IconTenis,
-        },
+        {image: IconBlusa},
+        {image: IconBlusa},
+        {image: IconCalca},
+        {image: IconFone},
+        {image: IconTenis},
     ]
+
+    const arrayCardsEmAlta = []
+    for(let i = 0; i < 8 ; i++){
+        arrayCardsEmAlta.push({
+            image: ImgTenis2,
+            title: "K-Swiss V8 - Masculino",
+            discount: "30% OFF",
+            type: "tenis",
+            price: " $100",
+        })
+    }
+    
+
     return ( 
         <>
             <div className="w-full">
@@ -53,7 +57,7 @@ const HomePage = () => {
                     <Sections
                     titleAlign={"left"}
                     title={"Coleções em destaque"}
-                    link={{href:"", text: "Ver todos ->"}}
+                    link={""}
                     estilo={"flex flex-wrap gap-3"}
                     >
                         {arrayCards.map((item)=>(
@@ -64,6 +68,7 @@ const HomePage = () => {
                             />
                         ))}
                     </Sections>
+
                     {/* Coleções em Destaque Tipo */}
                     <Sections
                     titleAlign={"center"}
@@ -76,6 +81,25 @@ const HomePage = () => {
                                         image={item.image}
                                     />
                                 ))}
+                        </div>
+                    </Sections>
+
+                    {/* Produtos em alta */}
+
+                    <Sections
+                    titleAlign={"left"}
+                    title={"Produtos em alta"}
+                    link={{href:"",text:"ver todos ->"}}>
+                        <div className="flex flex-wrap items-center justify-around">
+                            {arrayCardsEmAlta.map(item => (
+                                <CardProdutosEmAlta
+                                    image={item.image}
+                                    title={item.title}
+                                    discount={item.discount}
+                                    type={item.type}
+                                    price={item.price}
+                                ></CardProdutosEmAlta>
+                            ))}
                         </div>
                     </Sections>
             </div>

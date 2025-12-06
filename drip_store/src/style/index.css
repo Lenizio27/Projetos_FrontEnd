@@ -26,3 +26,7 @@ body{
 
     --b1: #47474779;
 }
+
+.cssDropShadow:hover{
+    filter: drop-shadow(0 0 2px rgb(255, 0, 0));
+}
