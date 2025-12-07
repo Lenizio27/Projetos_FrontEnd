@@ -26,15 +26,15 @@ const Header = () => {
             title: "Home"
         },
         {
-            route: "/s",
+            route: "/ProductListingPage",
             title: "Produtos"
         },
         {
-            route: "/s2",
+            route: "/",
             title: "Categorias"
         },
         {
-            route: "/s3",
+            route: "/ProductViewPage",
             title: "Meus Pedidos"
         },
     ]
@@ -83,7 +83,7 @@ const Header = () => {
                                 >{item.title}</NavLink>
                             </li>
                         ))}
-                    </ul>
+                    </ul> 
                 </nav>
             </div>
             {/* Header Mobile */}

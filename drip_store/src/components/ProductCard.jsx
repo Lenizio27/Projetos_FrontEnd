@@ -2,7 +2,7 @@ export const CardDestaque = ({discount, title, image}) => {
     return ( 
         <>
             <section className="relative overflow-hidden h-[251px] flex-1 bg-c7 basis-[405px] shrink-[405px] rounded-xl flex ">
-                <div className="flex flex-col p-3 w-[50%] h-[100%] justify-around">
+                <div className="flex flex-col p-3 w-[50%] h-[100%] justify-around z-[1]">
                     <p className="bg-[#E7FF86] p-3 font-bold h-[32px] w-[92px] text-[14px] flex items-center rounded-xl">
                         {discount}
                     </p>
@@ -35,7 +35,7 @@ export const CardDestaqueTipo = ({image}) => {
 export const CardProdutosEmAlta = ({image, title, discount, type, price}) => {
     return (
         <>
-            <section className="p-3 w-[292px] h-[439px] max-md:w-[163px] max-md:h-[300px]">
+            <section className="p- w-[292px] h-[439px] max-md:w-[163px] max-md:h-[300px]">
                 <div className="relative flex items-center justify-center bg-s7 w-full h-[321px] max-md:h-[200px]">
                     <div className="bg-[#E7FF86] p-3 font-bold h-[32px] w-[92px] text-[14px] flex items-center rounded-xl absolute left-[10px] top-[10px]">{discount}</div>
                     <img src={image} alt="" className="rotate-[-30deg] w-[200px] max-md:w-[120px]"/>

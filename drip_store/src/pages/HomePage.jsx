@@ -1,4 +1,4 @@
-import { SectionHero, Sections } from "../components/Section";
+import { SectionHero, Sections, SectionOfertaEspecial } from "../components/Section";
 import { CardDestaque, CardDestaqueTipo, CardProdutosEmAlta } from "../components/ProductCard";
 import ImgBlusa from "../assets/images/blusa_destaque.png";
 import ImgTenis from "../assets/images/tenis_3.png";
@@ -90,7 +90,7 @@ const HomePage = () => {
                     titleAlign={"left"}
                     title={"Produtos em alta"}
                     link={{href:"",text:"ver todos ->"}}>
-                        <div className="flex flex-wrap items-center justify-around">
+                        <div className="flex flex-wrap items-center justify-between">
                             {arrayCardsEmAlta.map(item => (
                                 <CardProdutosEmAlta
                                     image={item.image}
@@ -102,6 +102,7 @@ const HomePage = () => {
                             ))}
                         </div>
                     </Sections>
+                    <SectionOfertaEspecial/>
             </div>
         </> 
     );

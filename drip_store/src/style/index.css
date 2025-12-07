@@ -30,3 +30,7 @@ body{
 .cssDropShadow:hover{
     filter: drop-shadow(0 0 2px rgb(255, 0, 0));
 }
+
+.OfertaEspecial{
+    background-image: linear-gradient(to bottom, #b5b6f279, rgba(255, 255, 255, 0));
+}

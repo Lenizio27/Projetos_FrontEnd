@@ -1,4 +1,5 @@
 import ImgTenisVermelho from "../assets/images/tenis_1.png"
+import ImgTenisAmarelo from "../assets/images/tenis_4.png"
 
 export const SectionHero = () => {
     return ( 
@@ -34,7 +35,7 @@ export const Sections = ({title, titleAlign, link, children, estilo}) => {
     const align = titleAlign === "center" ? "center" : "left";
     return (
         <>
-            <section className="bg-s8">
+            <section className="bg-s8 py-10">
                 <div className="max-w-[1440px] m-auto px-4">
                     <div className={`flex items-center ${align === "center" ? "justify-center" : "justify-between"}`}>
                         <h2 className="text-s2 text-[18px] my-3 font-bold">{title}</h2>
@@ -50,3 +51,34 @@ export const Sections = ({title, titleAlign, link, children, estilo}) => {
         </>
     )
 }
+
+export const SectionOfertaEspecial = ({}) => {
+    return (
+        <>
+            <section className="my-[40px]">
+                <div className="flex max-md:flex-col max-w-[1440px] m-auto px-4">
+                    <div className="flex-1 relative w-[573px] flex items-center justify-center max-md:w-[auto]">
+                        <img src={ImgTenisAmarelo} alt="" className="w-auto max-md:w-[300px]"/>
+                        <div className="OfertaEspecial absolute h-[466px] w-[466px] top-0 -z-10 rounded-full max-md:w-[280px] max-md:h-[280px]"></div>
+                    </div>
+                    <div className="flex-1 flex flex-col gap-3 justify-center px-8 max-md:pt-28">
+                        <p className="font-bold text-[14px] text-c2 max-md:text-c6">
+                            Oferta Especial
+                        </p>
+                        <h3 className="font-bold text-[48px] leading-[50px] ">
+                            Air Jordan edição de colecionador
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus nihil quas obcaecati quae molestiae soluta nam reprehenderit sunt nemo. Id nesciunt ut voluptas dolores voluptatem atque doloribus! Alias, modi facilis?
+                        </p>
+                        <button
+                            className="flex items-center justify-center text-s7 h-[22px] bg-c2 px-14 py-5 rounded-md my-5 max-md:w-full w-[200px]">
+                                Ver Oferta
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </>
+    )
+}
+

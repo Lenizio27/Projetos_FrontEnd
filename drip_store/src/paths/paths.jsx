@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
+import ProductListingPage from "../pages/ProductListingPage";
+import ProductViewPage from "../pages/ProductViewPage";
 import Layout from "../layout/Layout";
 
 const Paths = () => {
@@ -7,6 +9,8 @@ const Paths = () => {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/ProductListingPage" element={<ProductListingPage/>} />
+        <Route path="/ProductViewPage" element={<ProductViewPage/>} />
       </Route>
     </Routes>
   );
