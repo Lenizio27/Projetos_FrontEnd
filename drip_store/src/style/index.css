@@ -34,3 +34,7 @@ body{
 .OfertaEspecial{
     background-image: linear-gradient(to bottom, #b5b6f279, rgba(255, 255, 255, 0));
 }
+
+.checkbox1::after{
+    content: "✓";
+}
