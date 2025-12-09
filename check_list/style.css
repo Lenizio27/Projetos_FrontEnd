@@ -1,0 +1,56 @@
+:root{
+    --p1: #212121;
+    --p2: #2d2d2d;
+    --p3: #444444;
+    --p4: #808080;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--p1);
+    color: #ffffff;
+    #divBody{
+        max-width: 1440px;
+        margin: auto;
+    }
+}
+
+main{
+    padding: 5px;
+
+    .boxSections{
+        h2{
+            margin: 0;
+        }
+
+        border-radius: 15px;
+        margin: 10px;
+        border: 1px solid var(--p3);
+        padding: 10px;
+        background-color: var(--p2);
+    }
+
+    #sectionFocus{
+        #divTimerFocus{
+            width: 100%;
+            #inTimerFocus{
+                all: unset;
+                width: 100px;
+                height: 100px;
+                border-radius: 15px;
+                background-color: var(--p4);
+                text-align: center;
+                font-size: 40px;
+                }
+            }
+        }
+    #sectionGoal{
+
+    }
+
+    #sectionTasks{
+
+    }
+}
+
