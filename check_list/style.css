@@ -3,6 +3,8 @@
     --p2: #2d2d2d;
     --p3: #444444;
     --p4: #808080;
+
+    --s1: #75ff75;
 }
 
 body{
@@ -17,8 +19,14 @@ body{
 }
 
 main{
+    #divMain{
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
     padding: 5px;
-
+    /* Periodo de concentracao */
     .boxSections{
         h2{
             margin: 0;
@@ -32,25 +40,74 @@ main{
     }
 
     #sectionFocus{
+        flex: 1;
+        flex-basis: 300px;
+        flex-shrink: 300px;
         #divTimerFocus{
-            width: 100%;
+            display: flex;
+            justify-content: center;
+
             #inTimerFocus{
-                all: unset;
                 width: 100px;
                 height: 100px;
                 border-radius: 15px;
                 background-color: var(--p4);
                 text-align: center;
                 font-size: 40px;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+
+                .buttonsTimer{
+                    position: absolute;
+                    bottom: 0;
+                    height: 20px;
+                    width: 48px;
+                    background-color: var(p2);
+                    border: 1px solid var(--p1);
+                    cursor: pointer;
+                }
+                .buttonsTimer:active{
+                    background-color: black;
+                }
+
+                #btLeft{
+                    border-radius: 0px 0px 0px 15px;
+                }
+
+                #btRight{
+                    border-radius: 0px 0px 15px 0px;
+                    right: 0;
+                }
+
                 }
             }
-        }
-    #sectionGoal{
-
+            #btFocus{
+                width: 100%;
+                margin-top: 10px;
+                border-radius: 5px;
+                padding: 5px;
+                background-color: var(--s1);
+                transition: .4s;
+            }
+            
+            #btFocus:hover{
+                background-color: #017474;
+                color: white;
+            }
     }
-
+    /* Metas Diarias */
+    #sectionGoal{
+        flex: 1;
+        flex-basis: 300px;
+    }
+    /* Tarefas */
     #sectionTasks{
-
+        flex-basis: 300px;
     }
 }
 
+/* Footer */
+footer{
+    text-align: center;
+}
