@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { CardProdutosEmAlta } from "../components/ProductCard";
+import ImgTenis2 from "../assets/images/tenis_2.png";
 
 const ProductListingPage = () => {
     const arrayFiltroProdutos = [
@@ -19,17 +21,32 @@ const ProductListingPage = () => {
             radios: ["Novo", "Usado"],
         },
     ]
+
+    const arrayCardsEmAlta = []
+    for(let i = 0; i < 8 ; i++){
+        arrayCardsEmAlta.push({
+            image: ImgTenis2,
+            title: "K-Swiss V8 - Masculino",
+            discount: "30% OFF",
+            type: "tenis",
+            price: " $100",
+        })
+    }
+
     return ( 
         <>
         <section className="bg-s6">
             <div className="flex flex-col max-w-[1440px] m-auto px-4">
-                <div className="flex justify-between items-center">
-                    <h2 className="">resultados para ""</h2>
-                    <div className="w-[300px] h-[50px] flex items-center justify-center border">
+                <div className="flex justify-between items-center my-2">
+                    <h2 className="max-md:hidden">resultados para ""</h2>
+                    <div className="w-[300px] h-[50px] flex items-center justify-center border max-md:w-full mr-1">
                         ordenar por:
                         <select name="" id="" className="bg-s6">
                             <option value="" className="bg-c2">mais relevanes</option>
                         </select>
+                    </div>
+                    <div className="md:hidden h-[50px] w-[50px] flex items-center bg-c2 justify-center text-s7 rounded-md">
+                        <div className="pi pi-filter"></div>
                     </div>
                 </div>
                 <div className="flex">
@@ -51,8 +68,16 @@ const ProductListingPage = () => {
                             </div>
                         ))}
                     </aside>
-                    <div className="flex-8">
-
+                    <div className="flex-8 flex flex-wrap gap-2 px-2 justify-around">
+                       {arrayCardsEmAlta.map(item => (
+                            <CardProdutosEmAlta
+                                image={item.image}
+                                title={item.title}
+                                discount={item.discount}
+                                type={item.type}
+                                price={item.price}
+                            ></CardProdutosEmAlta>
+                        ))}
                     </div>
                 </div>
             </div>
